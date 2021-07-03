@@ -14,3 +14,4 @@ sudo apt install curl \
                  pulseaudio \
                  pulseaudio-utils \
                  pavucontrol \
+                 ranger
