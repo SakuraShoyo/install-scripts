@@ -4,7 +4,8 @@ echo "Install nvim and node..."
 sudo apt install snapd
 sudo snap install core \
                   node --classic \
-                  nvim --classic 
+                  nvim --classic \
+                  clangd --classic
 
 ## PYENV
 echo "Install Pyenv..."
