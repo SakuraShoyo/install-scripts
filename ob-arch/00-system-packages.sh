@@ -40,4 +40,7 @@ sudo pacman -S  --needed base-devel \
                 pulseaudio \
                 pavucontrol \
                 ranger \
-                ueberzug
+                ueberzug \
+                fish \
+                pkgfile \
+                inetutils 
