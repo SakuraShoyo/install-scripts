@@ -2,7 +2,7 @@
 
 MENU="
 1 - openbox
-2 - i3
+2 - bspwm
 3 - both
 "
 echo $MENU
@@ -15,11 +15,11 @@ case "$OPTION" in
     ;;
   2)
     echo "install i3"
-    sudo pacman -S i3-gaps
+    sudo pacman -S bspwm sxhkd dmenu
     ;;
   3)
-    echo "install openbox and i3"
-    sudo pacman -S openbox obconf i3-gaps lightdm lightdm-gtk-greeter
+    echo "install openbox and bspwm"
+    sudo pacman -S openbox obconf bspwm sxhkd dmenu lightdm lightdm-gtk-greeter
     ;;
   *)
     echo "invalid value"
@@ -27,7 +27,7 @@ case "$OPTION" in
     ;;
   esac
   
-sudo pacman -S  --needed base-devel
+sudo pacman -S  --needed base-devel \
                 curl \
                 xorg-server \
                 xorg-xrandr
@@ -38,6 +38,6 @@ sudo pacman -S  --needed base-devel
                 nitrogen \
                 rofi \
                 pulseaudio \
-                pulseaudio-utils \
                 pavucontrol \
-                ranger
+                ranger \
+                ueberzug
