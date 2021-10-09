@@ -6,7 +6,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 sudo pacman -S nodejs-lts-fermium neovim ccls 
 
-## PYENV
+## PYENV and pip
+echo "Install pip"
+sudo pacman -S python-pip
 echo "Install Pyenv..."
 sudo pacman -S openssl zlib xz
 

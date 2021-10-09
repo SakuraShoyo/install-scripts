@@ -14,7 +14,7 @@ case "$OPTION" in
     sudo pacman -S openbox obconf
     ;;
   2)
-    echo "install i3"
+    echo "install bspwm"
     sudo pacman -S bspwm sxhkd dmenu
     ;;
   3)
@@ -30,7 +30,8 @@ case "$OPTION" in
 sudo pacman -S  --needed base-devel \
                 curl \
                 xorg-server \
-                xorg-xrandr
+                xorg-xrandr \
+                xorg-xinit \
                 lxappearance \
                 rxvt-unicode \
                 wmctrl \
