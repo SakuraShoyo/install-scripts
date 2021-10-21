@@ -29,9 +29,11 @@ case "$OPTION" in
   
 sudo pacman -S  --needed base-devel \
                 curl \
+                wget \
                 xorg-server \
                 xorg-xrandr \
                 xorg-xinit \
+                mesa \
                 lxappearance \
                 rxvt-unicode \
                 wmctrl \
@@ -41,7 +43,8 @@ sudo pacman -S  --needed base-devel \
                 pulseaudio \
                 pavucontrol \
                 ranger \
-                ueberzug \
                 fish \
                 pkgfile \
-                inetutils 
+                inetutils \
+                xdg-utils \
+                ueberzug
