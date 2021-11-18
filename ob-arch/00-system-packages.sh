@@ -33,7 +33,6 @@ sudo pacman -S  --needed base-devel \
                 xorg-server \
                 xorg-xrandr \
                 xorg-xinit \
-                mesa \
                 lxappearance \
                 rxvt-unicode \
                 wmctrl \
@@ -47,4 +46,6 @@ sudo pacman -S  --needed base-devel \
                 pkgfile \
                 inetutils \
                 xdg-utils \
-                ueberzug
+                ueberzug \
+                xdpyinfo \
+                xcompmgr
