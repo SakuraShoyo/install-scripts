@@ -8,9 +8,10 @@ tar xvpf ~/Programs/dotfiles/fonts/fonts.tar.gz -C ~/.loca/share/fonts/
 
 
 ##transparency
-mkdir -pv ~/Programs
-wget http://www.forchheimer.se/transset-df/transset-df-6.tar.gz -P ~/Programs 
+pushd ~/Programs
+  wget http://www.forchheimer.se/transset-df/transset-df-6.tar.gz -P ~/Programs 
+  tar xvvf ~/Programs/transset-df-6.tar.gz .
+  cd ~/Programs/transset-df-6
+  make && sudo make install
+popd
 
-tar xvvf ~/Programs/transset-df-6.tar.gz -C ~/Programs
-cd ~/Programs/transset-df-6
-make && sudo make install
