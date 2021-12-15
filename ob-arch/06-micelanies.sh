@@ -13,5 +13,14 @@ pushd ~/Programs
   tar xvvf ~/Programs/transset-df-6.tar.gz .
   cd ~/Programs/transset-df-6
   make && sudo make install
+
+  cd ../
+  git clone https://aur.archlinux.org/picom-tryone-git.git
+  cd picom-tryone-git/
+  makepkg -si
+  cd ../
 popd
 
+
+
+exit 0
