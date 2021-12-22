@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ## fonts
-sudo pacman -S ttf-dejavu ttf-liberation noto-fonts powerline-fonts
-mkdir -p Programs && mkdir -p ~/.local/share/fonts 
-git clone git@github.com:Shoyo-0kbps/dotfiles.git ~/Programs
-tar xvpf ~/Programs/dotfiles/fonts/fonts.tar.gz -C ~/.loca/share/fonts/ 
+#sudo pacman -S ttf-dejavu ttf-liberation noto-fonts powerline-fonts
+#mkdir -p Programs && mkdir -p ~/.local/share/fonts 
+#git clone git@github.com:Shoyo-0kbps/dotfiles.git ~/Programs
+#tar xvpf ~/Programs/dotfiles/fonts/fonts.tar.gz -C ~/.loca/share/fonts/ 
 
 
 ##transparency
@@ -15,8 +15,8 @@ pushd ~/Programs
   make && sudo make install
 
   cd ../
-  git clone https://aur.archlinux.org/picom-tryone-git.git
-  cd picom-tryone-git/
+  git clone https://aur.archlinux.org/picom-jonaburg-git.git 
+  cd picom-jonaburg-git/
   makepkg -si
   cd ../
 popd
