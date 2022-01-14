@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 mkdir -pv ~/Programs
-  
-sudo pacman -S  --needed base-devel \
+
+yes | sudo pacman -S  --needed base-devel \
                 curl \
                 wget \
                 xorg-server \
@@ -20,6 +20,4 @@ sudo pacman -S  --needed base-devel \
                 inetutils \
                 xdg-utils \
                 ueberzug \
-                xcompmgr
-
-
+                openssh

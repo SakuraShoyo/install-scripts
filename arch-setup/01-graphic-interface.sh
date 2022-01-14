@@ -2,18 +2,12 @@
 
 install-sucklesstools(){
   wget https://dl.suckless.org/tools/dmenu-5.0.tar.gz -P ~/Programs
-  wget https://dl.suckless.org/st/st-0.8.4.tar.gz -P ~/Programs
   
   pushd ~/Programs
-    tar xvf st-*.tar.gz 
-    cd st*/
-      cp ~/Programs/dotfiles/sucklesstools/st/* .
-      make && sudo make clean install
-      cd ../
-      tar xvf dmenu-*.tar.gz 
-      cd dmenu*/
-      cp ~/Programs/dotfiles/sucklesstools/dmenu/* .
-      make && sudo make clean install
+    tar xvf dmenu-*.tar.gz 
+    cd dmenu*/
+    cp ~/Programs/dotfiles/sucklesstools/dmenu/* .
+    make && sudo make clean install
   popd
   
   if [[ $1 == 1 ]]; then
@@ -27,8 +21,8 @@ install-sucklesstools(){
   fi
 }
 
-if  [! -d ~/Programs/dotfiles ]; then 
-  git clone https://github.com/Shoyo-0kbps/dotfiles ~/Programs
+if  [ ! -d ~/Programs/dotfiles ]; then 
+  git clone https://github.com/Shoyo-0kbps/dotfiles ~/Programs/dotfiles
 fi
 
 MENU="
@@ -42,16 +36,16 @@ read -p "Option: " OPTION
 case "$OPTION" in 
   1)
     echo "install openbox"
-    sudo pacman -S openbox obconf rofi
+    yes | sudo pacman -S openbox obconf rofi
     ;;
   2)
     echo "install bspwm"
-    sudo pacman -S bspwm sxhkd
+    yes | sudo pacman -S bspwm sxhkd
     install-sucklesstools
     ;;
   3)
     echo "install dwm"
-    sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig
+    yes | sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig
     install-sucklesstools 1
     ;;
   *)
