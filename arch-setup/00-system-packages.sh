@@ -2,7 +2,7 @@
 set -e
 mkdir -pv ~/Programs
 
-yes | sudo pacman -S  --needed base-devel \
+sudo pacman -S  --needed base-devel \
                 curl \
                 wget \
                 xorg-server \
@@ -20,4 +20,4 @@ yes | sudo pacman -S  --needed base-devel \
                 inetutils \
                 xdg-utils \
                 ueberzug \
-                openssh
+                openssh --noconfirm

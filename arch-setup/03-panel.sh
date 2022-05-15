@@ -16,13 +16,14 @@ case "$OPTION" in
     ;;
   2)
     echo "install xfce4-panel and plugins..."
-    yes | sudo pacman -S  xfce4-panel \
-                          xfce4-datetime-plugin \
-                          xfce4-genmon-plugin \
-                          xfce4-pulseaudio-plugin \
+    sudo pacman -S  	xfce4-panel \
+                	xfce4-datetime-plugin \
+                	xfce4-genmon-plugin \
+                	xfce4-pulseaudio-plugin  --noconfirm
     ;;
   3)
     echo "install dependencies..."
+    rm -rvf ~/Programs/polybar
     git clone https://aur.archlinux.org/polybar.git ~/Programs/polybar
     cd ~/Programs/polybar && makepkg -si
     ;;

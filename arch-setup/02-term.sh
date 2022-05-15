@@ -18,20 +18,21 @@ case "$OPTION" in
   1)
     echo "install st"
     wget https://dl.suckless.org/st/st-0.8.4.tar.gz -P ~/Programs
+    rm -rvf ~/Programs/st*
     pushd ~/Programs
       tar xvf st-*.tar.gz 
       cd st*/
-      cp ~/Programs/dotfiles/sucklesstools/st/* .
+      cp -rv ~/Programs/dotfiles/sucklesstools/st/* .
       make && sudo make clean install
     popd
     ;;
   2)
     echo "install alacritty"
-    yes | sudo pacman -S alacritty
+    sudo pacman -S alacritty --noconfirm
     ;;
   3)
     echo "install xfce4-terminal"
-    yes | sudo pacman -S xfce4-terminal
+    sudo pacman -S xfce4-terminal --noconfirm
     ;;
   *)
     echo "invalid option"

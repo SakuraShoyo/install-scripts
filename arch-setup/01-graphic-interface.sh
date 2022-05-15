@@ -1,12 +1,13 @@
 #!/bin/bash
 
 install-sucklesstools(){
+  rm -rvf ~/Programs/{dmenu*,dwm*}
   wget https://dl.suckless.org/tools/dmenu-5.0.tar.gz -P ~/Programs
   
   pushd ~/Programs
     tar xvf dmenu-*.tar.gz 
     cd dmenu*/
-    cp ~/Programs/dotfiles/sucklesstools/dmenu/* .
+    cp -rv ~/Programs/dotfiles/sucklesstools/dmenu/* .
     make && sudo make clean install
   popd
   
@@ -15,7 +16,7 @@ install-sucklesstools(){
     pushd ~/Programs
       tar xvf dwm-*.tar.gz
       cd dwm*/
-      cp ~/Programs/dotfiles/sucklesstools/DWM/* .
+      cp -rv ~/Programs/dotfiles/sucklesstools/DWM/* .
       make && sudo make clean install
     popd
   fi
@@ -36,16 +37,16 @@ read -p "Option: " OPTION
 case "$OPTION" in 
   1)
     echo "install openbox"
-    yes | sudo pacman -S openbox obconf rofi
+    sudo pacman -S openbox obconf rofi --nocofirm
     ;;
   2)
     echo "install bspwm"
-    yes | sudo pacman -S bspwm sxhkd
+    sudo pacman -S bspwm sxhkd --noconfirm
     install-sucklesstools
     ;;
   3)
     echo "install dwm"
-    yes | sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig
+    sudo pacman -S base-devel libx11 libxft libxinerama freetype2 fontconfig --noconfirm
     install-sucklesstools 1
     ;;
   *)

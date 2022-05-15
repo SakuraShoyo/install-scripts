@@ -15,17 +15,18 @@ read -p "Option: " OPTION
 case "$OPTION" in 
   1)
     echo "install Firefox"
-    yes | sudo pacman -S firefox
+    sudo pacman -S firefox --noconfirm
     ;;
   2)
     echo "install Brave"
     mkdir -pv ~/Programs
+    rm -rvf ~/Programs/brave
     git clone https://aur.archlinux.org/brave-bin.git ~/Programs/brave
     cd ~/Programs/brave-bin
     makepkg -si
     ;;
   3)
-    yes | sudo pacman -S chromium
+    sudo pacman -S chromium --noconfirm
     ;;
   *)
     echo "not avaliable"
