@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -pv ~/{Programs/,Downloads/}
-mkdir -pv ~/Media/{Wallpapers,Misc,Screenshots,Videos}
+mkdir -pv ~/Media/{Images{Wallpapers,Misc,Screenshots},Videos,Misc}
 mkdir -pv ~/Documents/Code/{Python/,Shell/,JS-TS/,C-CPP/}
 mkdir -pv ~/.local/share/fonts/
 mkdir -pv ~/.config/nvim
