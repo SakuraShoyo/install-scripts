@@ -1,8 +1,14 @@
 #!/bin/bash
 
+mkdir -pv ~/Programs 
+
+pushd ~/Programs/
+  git clone https://aur.archlinux.org/yay.git | tee -a ~/Programs/install-scripts/arch-setup/logfiles/07sh/yay_install.log
+  cd yay && makepkg -si | tee -a ~/Programs/install-scripts/arch-setup/logfiles/07sh/yay_install.log
+popd
+
 ## Fonts
 sudo pacman -S ttf-dejavu ttf-liberation noto-fonts powerline-fonts --noconfirm | tee -a ./logfiles/07sh/fonts_install.log
-mkdir -pv ~/Programs 
 mkdir -pv ~/.local/share/fonts | tee -a ./logfiles/07sh/fonts_install.log  
 
 if [ ! -d ~/Programs/dotfiles ]; then
@@ -23,8 +29,8 @@ read -p "Option: " OPTION
 case "$OPTION" in 
   y)
     pushd ~/Programs/ 
-      git clone https://aur.archlinux.org/picom-jonaburg-git.git ~/Programs/picom-jonaburg-git | tee -a ./logfiles/07sh/picom_install.log
-      cd ~/Programs/picom-jonaburg-git && makepkg -si | tee -a ./logfiles/07sh/picom_install.log
+      git clone https://aur.archlinux.org/picom-jonaburg-git.git ~/Programs/picom-jonaburg-git | tee -a ~/Programs/install-scripts/arch-setup/logfiles/07sh/picom_install.log
+      cd ~/Programs/picom-jonaburg-git && makepkg -si | tee -a ~/Programs/install-scripts/arch-setup/logfiles/07sh/picom_install.log
     popd
     ;;
   n)
@@ -43,8 +49,11 @@ sudo pacman -S discord --noconfirm | tee -a ./logfiles/07sh/misc_install.log
 
 ## Timeshift
 echo "install Timeshift"
-git clone https://aur.archlinux.org/timeshift.git ~/Programs/timeshift | tee -a ./logfiles/07sh/timeshift_install.log
-cd ~/Programs/timeshift && makepkg -si | tee -a ./logfiles/07sh/timeshift_install.log
+sudo yay -S timeshift --noconfirm | tee -a ./logfiles/07sh/timeshift_install.log
+
+## Spotify 
+echo "install Spotify"
+sudo yay -S spotify --noconfirm | tee -a ./logfiles/07sh/spotify.log
 
 ## Wine
 echo "wine? (y/n)" | tee -a ./logfiles/07sh/wine_install.log
