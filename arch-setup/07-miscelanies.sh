@@ -74,4 +74,7 @@ case "$OPTION" in
     ;;
 esac
 
+## change old linux programs 
+sudo pacman -S htop duf neofetch --noconfirm | tee -a ./logfiles/07sh/misc_progs.log
+
 exit 0
