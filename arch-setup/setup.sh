@@ -11,11 +11,11 @@ rm -rvf ./logfiles
 mkdir -pv ./logfiles/{05sh/,07sh/}
 
 if [ ! -d ~/Programs/dotfiles ]; then
-  git clone https://github.com/Shoyo-0kbps/dotfiles ~/Programs/dotfiles
+  git clone https://github.com/frmiza/dotfiles ~/Programs/dotfiles
 fi
 
 if [ ! -d ~/Programs/vim-config ]; then
-  git clone https://github.com/Shoyo-0kbps/vim-config ~/Programs/vim-config
+  git clone https://github.com/frmiza/vim-config ~/Programs/vim-config
 fi
 
 ./00-system-packages.sh | tee ./logfiles/00sh.log

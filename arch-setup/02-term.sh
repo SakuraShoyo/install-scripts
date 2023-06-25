@@ -2,7 +2,7 @@
 mkdir -pv ~/Programs
 
 if  [ ! -d ~/Programs/dotfiles ]; then 
-  git clone https://github.com/Shoyo-0kbps/dotfiles ~/Programs/dotfiles
+  git clone https://github.com/frmiza/dotfiles ~/Programs/dotfiles
 fi
 
 MENU="

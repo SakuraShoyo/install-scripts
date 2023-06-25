@@ -24,3 +24,5 @@ sudo pacman -S docker --noconfirm | tee -a ./logfiles/05sh/docker_install.log
 
 ## Rust install 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh | tee -a ./logfiles/05sh/rust_install.log
+
+sudo pacman -S clang clang-tools-extra
