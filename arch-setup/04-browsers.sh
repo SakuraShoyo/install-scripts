@@ -1,35 +1,44 @@
 #!/bin/bash 
 
-MENU="
+OPTION=0
+
+while true; do
+
+  MENU="
   1 - Firefox
   2 - Brave
   3 - Chromium
   4 - Other
+  "
+  echo "${MENU//[0-9]  /$'\n'}"
+  read -p "Option: " OPTION
 
-"
+  if [ "$OPTION" -ge 1 ] && [ "$OPTION" -le 4 ]; then
+    
+    case "$OPTION" in
+      
+      1)
+        echo "Install Firefox"
+        sudo pacman -S firefox --noconfirm
+        ;;
+      2)
+        echo "Install Brave"
+        sudo yay -S brave-bin --noconfirm
+        ;;
+      3)
+        echo "Installing Chromium"
+        sudo pacman -S chromium --noconfirm
+        ;;
+      4)
+        echo "Install it later"
+        ;;
+      *)
+        echo "Invalid Option!"
+      esac
+      break 
+  
+  else
+    echo "Invalid Option!, try again"
+  fi 
 
-echo $MENU
-
-read -p "Option: " OPTION
-
-case "$OPTION" in 
-  1)
-    echo "install Firefox"
-    sudo pacman -S firefox --noconfirm
-    ;;
-  2)
-    echo "install Brave"
-    mkdir -pv ~/Programs
-    rm -rvf ~/Programs/brave
-    git clone https://aur.archlinux.org/brave-bin.git ~/Programs/brave
-    cd ~/Programs/brave-bin
-    makepkg -si
-    ;;
-  3)
-    sudo pacman -S chromium --noconfirm
-    ;;
-  *)
-    echo "not avaliable"
-    exit 1
-    ;;
-  esac
+done

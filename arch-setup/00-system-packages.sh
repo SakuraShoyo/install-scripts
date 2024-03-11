@@ -5,19 +5,23 @@ mkdir -pv ~/Programs
 sudo pacman -S  --needed base-devel \
                 curl \
                 wget \
-                xorg-server \
-                xorg-xrandr \
-                xorg-xinit \
-                lxappearance \
-                wmctrl \
-                xdotool \
-                nitrogen \
-                pulseaudio \
-                pavucontrol \
-                ranger \
-                zsh \
+                sed \
+                openssh \
+                os-prober \
+                ntfs-3g \
+                git \
+                cronie \
                 pkgfile \
-                inetutils \
-                xdg-utils \
-                ueberzug \
-                openssh --noconfirm
+                ranger \
+                lxappearance \
+                brightnessctl \
+                inetutils --noconfirm
+
+#YAY
+pushd ~/Programs/
+  git clone https://aur.archlinux.org/yay.git | tee -a ./logfiles/00sh/yay.log
+  cd yay 
+  makepkg -si | tee -a ./logfiles/00sh/yay.log  
+popd
+
+
