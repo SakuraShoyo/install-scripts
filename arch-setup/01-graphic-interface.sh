@@ -7,6 +7,7 @@ install-minimal-xorg(){
     xorg-xinit \
     wmctrl \
     xdotool \
+    xcb-util-cursor \
     libx11 \
     xrandr \
     libxft \
@@ -81,7 +82,9 @@ while true; do
       4)
         echo "Installing qtile"
         install-minimal-xorg
-        sudo pacman -S qtile python-dbus-next --noconfirm
+        sudo pacman -S qtile \
+          python-dbus-next \
+          python-setproctitle --noconfirm
         yay -S qtile-extras
         ;;
 
