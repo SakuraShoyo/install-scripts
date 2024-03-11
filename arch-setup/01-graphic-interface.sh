@@ -51,7 +51,8 @@ while true; do
   1 - Bspw  
   2 - Dwm  
   3 - Hyprland  
-  4 - Other  
+  4 - Qtile  
+  5 - Other  
   "
   echo "${MENU//[0-9]  /$'\n'}"
   read -p "Option: " OPTION
@@ -78,6 +79,13 @@ while true; do
           xdg-desktop-portal-hyprland --noconfirm
         ;;
       4)
+        echo "Installing qtile"
+        install-minimal-xorg
+        sudo pacman -S qtile python-dbus-next --noconfirm
+        yay -S qtile-extras
+        ;;
+
+      5)
         echo "Install another graphic interface manually later"
         ;;
       *)

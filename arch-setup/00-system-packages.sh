@@ -11,6 +11,9 @@ sudo pacman -S  --needed base-devel \
                 ntfs-3g \
                 git \
                 cronie \
+                unrar \
+                dnsmasq \
+                iptables-nft \
                 pkgfile \
                 ranger \
                 lxappearance \
