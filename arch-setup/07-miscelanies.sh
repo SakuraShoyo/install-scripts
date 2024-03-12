@@ -23,13 +23,16 @@ sudo pacman -S discord --noconfirm | tee -a ./logfiles/07sh/misc_install.log
 
 ## Spotify 
 echo "install Spotify"
-sudo yay -S spotify --noconfirm | tee -a ./logfiles/07sh/spotify.log
-
+sudo yay -S spotify | tee -a ./logfiles/07sh/spotify.log
 
 ## change old linux programs 
-sudo pacman -S htop duf --noconfirm | tee -a ./logfiles/07sh/misc_progs.log
+sudo pacman -S fd htop duf --noconfirm | tee -a ./logfiles/07sh/misc_progs.log
 
 exit 0
+
+## Balnder
+#echo "Installing Blender"
+#sudo pacman -S cuda blander
 
 ## Timeshift
 #echo "install Timeshift"

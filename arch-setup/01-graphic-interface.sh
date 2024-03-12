@@ -77,6 +77,7 @@ while true; do
           swaybg \
           wofi \
           mako \
+          python-pywlroots \
           xdg-desktop-portal-hyprland --noconfirm
         ;;
       4)
@@ -101,5 +102,3 @@ while true; do
     echo "Invalid Option, try again"
   fi
 done
-    
-
